@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           repository: pinalworkforce1-del/LU_Discovery
-          ref: 32f6db0f1821cda10d5546720ab7d80f4e5e4157
+          ref: 9dd9e05a090fa84ad66c35d8e20aae84a9da66ba
           persist-credentials: false
       - name: Checkout separate staging test launcher
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -42,7 +42,7 @@ jobs:
       - name: Validate exact staging source
         shell: bash
         run: |
-          test "$(git rev-parse HEAD)" = "32f6db0f1821cda10d5546720ab7d80f4e5e4157"
+          test "$(git rev-parse HEAD)" = "9dd9e05a090fa84ad66c35d8e20aae84a9da66ba"
           test -s public/northern-resume-direct/index.html
           test -s public/northern-resume-direct/app.js
           test -s public/northern-resume-direct/levelup-guard.js
