@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nova Résumé Integration — Staging Checks</title>
+<style>
+:root{color-scheme:light}body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f3f7fa;color:#19344a;margin:0;padding:28px}
+main{max-width:880px;margin:0 auto}h1{font-size:2rem;margin:6px 0 12px}p{line-height:1.55}.eyebrow{font-weight:750;color:#216384;text-transform:uppercase;letter-spacing:.09em;font-size:.8rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin:26px 0}.card{background:white;border:1px solid #c7d9e3;border-radius:14px;padding:22px;box-shadow:0 3px 10px #13395012}
+a.go{display:block;color:white;background:#17628e;padding:12px 16px;text-align:center;text-decoration:none;border-radius:9px;font-weight:700;margin-top:17px}
+.note{background:#fff;border:1px solid #d5e0e8;border-radius:12px;padding:18px 22px}li{margin:8px 0}small{color:#566b7e}
+</style></head><body><main>
+<div class="eyebrow">Level Up • Isolated staging</div>
+<h1>Nova Résumé Integration Check</h1>
+<p>These two links open the same staged résumé builder while recording a different entry point. Use the same existing Level Up test participant account for both. Your résumé drafts and completed versions are stored in Level Up's Supabase, so this test changes that test account's data.</p>
+<div class="grid">
+<section class="card"><h2>Resume District entry</h2><p>Checks that a saved résumé returns to Resume District and does not mark the District's learning journey complete.</p><a class="go" href="./?from=resume-district">Test Resume District entry</a></section>
+<section class="card"><h2>Ready 2 Work entry</h2><p>Checks that a completed résumé records Resume Rise progress and returns to the Ready 2 Work map.</p><a class="go" href="./?from=ready-2-work">Test Ready 2 Work entry</a></section>
+</div><section class="note"><h2>What to verify</h2><ol>
+<li>Open your existing résumé. Confirm the original text and saved versions remain available.</li>
+<li>Complete a résumé using the Ready 2 Work entry and confirm you return to its map.</li>
+<li>Reopen from Resume District, make a small meaningful edit, complete, and confirm the previous version remains intact.</li>
+<li>Check the new saved version appears and no existing Resume District learning completion was changed.</li>
+</ol><p><small>These are entry-context simulations, not the actual production map launch buttons. The authentic map and District staging code are held on separate test branches. Production is unchanged.</small></p></section></main></body></html>
