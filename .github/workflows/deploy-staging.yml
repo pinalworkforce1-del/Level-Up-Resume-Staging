@@ -31,6 +31,13 @@ jobs:
           repository: pinalworkforce1-del/LU_Discovery
           ref: 32f6db0f1821cda10d5546720ab7d80f4e5e4157
           persist-credentials: false
+      - name: Checkout separate staging test launcher
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          repository: pinalworkforce1-del/Level-Up-Resume-Staging
+          ref: main
+          path: _staging_repo
+          persist-credentials: false
       - name: Validate exact staging source
         shell: bash
         run: |
@@ -44,7 +51,7 @@ jobs:
         run: |
           mkdir -p _site
           cp -a public/northern-resume-direct/. _site/
-          cp entrypoint-check.html _site/entrypoint-check.html
+          cp _staging_repo/entrypoint-check.html _site/entrypoint-check.html
           touch _site/.nojekyll
           test -s _site/entrypoint-check.html
           test -s _site/index.html
