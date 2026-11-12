@@ -7,6 +7,7 @@ on:
       - '.github/workflows/deploy-staging.yml'
       - 'README.md'
       - 'entrypoint-check.html'
+      - 'my-resumes.html'
   workflow_dispatch:
 
 permissions:
@@ -52,8 +53,10 @@ jobs:
           mkdir -p _site
           cp -a public/northern-resume-direct/. _site/
           cp _staging_repo/entrypoint-check.html _site/entrypoint-check.html
+          cp _staging_repo/my-resumes.html _site/my-resumes.html
           touch _site/.nojekyll
           test -s _site/entrypoint-check.html
+          test -s _site/my-resumes.html
           test -s _site/index.html
           test -s _site/levelup-guard.js
           test -s _site/levelup-experience-discovery.js
