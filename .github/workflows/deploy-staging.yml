@@ -46,11 +46,11 @@ jobs:
           touch _site/.nojekyll
           test -s _site/index.html
           test -s _site/levelup-guard.js
-          if grep -q 'https://pinalworkforce1-del.github.io/Level_Up_Portal/career-tree-next/ready-2-work/#map' _site/app.js; then
-            echo 'Return URL verified'
-          else
-            echo 'Missing expected return route'; exit 1
-          fi
+          test -s _site/levelup-experience-discovery.js
+          grep -q 'navigateBack' _site/app.js
+          grep -q 'resume-district' _site/levelup-guard.js
+          grep -q 'ready-2-work' _site/levelup-guard.js
+          echo 'Context-aware Level Up return routing verified'
       - name: Upload staging site
         uses: actions/upload-pages-artifact@v3
         with:
