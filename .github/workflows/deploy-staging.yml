@@ -51,10 +51,8 @@ jobs:
           else
             echo 'Missing expected return route'; exit 1
           fi
-      - name: Configure Pages
+      - name: Configure existing Pages site
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - name: Upload staging site
         uses: actions/upload-pages-artifact@v3
         with:
